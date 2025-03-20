@@ -26,3 +26,13 @@ end
 
 alias lazynvim='NVIM_APPNAME="lazynvim" nvim'
 alias n="nvim	"
+if test -e ./.nvmrc
+    nvm use
+end
+
+# pnpm
+set -gx PNPM_HOME "/home/jj/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
