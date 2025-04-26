@@ -36,3 +36,13 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+pyenv init - fish | source
+
+set -x GOPATH $HOME/go
+set -x PATH $PATH $GOPATH/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+direnv hook fish | source
